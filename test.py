@@ -130,8 +130,6 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # Specify the dimensionality of the image embedding.
 embed_size = 256
 
-# -#-#-# Do NOT modify the code below this line. #-#-#-#
-
 # Initialize the encoder. (Optional: Add additional arguments if necessary.)
 encoder = EncoderCNN(embed_size)
 
@@ -153,8 +151,6 @@ assert (features.shape[0] == batch_size) & (features.shape[1] == embed_size), "T
 
 # Specify the number of features in the hidden state of the RNN decoder.
 hidden_size = 512
-
-# -#-#-# Do NOT modify the code below this line. #-#-#-#
 
 # Store the size of the vocabulary.
 vocab_size = len(data_loader.dataset.vocab)

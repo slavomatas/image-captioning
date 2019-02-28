@@ -8,7 +8,7 @@ from torchvision import transforms
 from torch.autograd import Variable
 from image_captioning.show_attend_tell import ShowAttendTellModel
 
-# TODO #1: Define a transform to pre-process the testing images.
+# Define a transform to pre-process the testing images.
 transform_test = transforms.Compose([
     transforms.Resize(256),                          # smaller edge of image resized to 256
     transforms.RandomCrop(224),                      # get 224x224 crop from random location
@@ -23,8 +23,6 @@ transform_test = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))])
 
-
-#-#-#-# Do NOT modify the code below this line. #-#-#-#
 
 # Create the data loader.
 data_loader = get_loader(transform=transform_test,
@@ -55,10 +53,10 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 import os
 import torch
 
-# TODO #2: Specify the saved models to load.
+# Specify the saved models to load.
 model_file = "show-attend-tell-3.pkl"
 
-# TODO #3: Select appropriate values for the Python variables below.
+# Select appropriate values for the Python variables below.
 embed_size = 512
 hidden_size = 512
 

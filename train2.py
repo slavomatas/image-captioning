@@ -12,7 +12,7 @@ from pycocotools.coco import COCO
 from torchvision import transforms
 from data_loader import get_loader
 
-## TODO #1: Select appropriate values for the Python variables below.
+## Select appropriate values for the Python variables below.
 batch_size = 128          # batch size
 vocab_threshold = 5        # minimum word count threshold
 vocab_from_file = True    # if True, load existing vocab file
@@ -24,7 +24,7 @@ print_every = 100          # determines window for printing average loss
 log_file = 'training_log.txt'       # name of file with saved training loss and perplexity
 learning_rate = 1e-3
 
-# (Optional) TODO #2: Amend the image transform below.
+# Amend the image transform below.
 transform_train = transforms.Compose([
     transforms.Resize(256),                          # smaller edge of image resized to 256
     transforms.RandomCrop(224),                      # get 224x224 crop from random location
@@ -53,10 +53,10 @@ model.to(device)
 # Define the loss function.
 criterion = nn.CrossEntropyLoss().cuda() if torch.cuda.is_available() else nn.CrossEntropyLoss()
 
-# TODO #3: Specify the learnable parameters of the model.
+# Specify the learnable parameters of the model.
 params = filter(lambda p: p.requires_grad, model.parameters())
 
-# TODO #4: Define the optimizer.
+# Define the optimizer.
 optimizer = torch.optim.Adam(params, lr=learning_rate)
 
 # Set the total number of training steps per epoch.
